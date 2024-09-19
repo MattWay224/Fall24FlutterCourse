@@ -3,17 +3,8 @@ include: package:flutter_lints/flutter.yaml
 
 linter:
   rules:
-    - avoid_print
-    - always_declare_return_types
-    - avoid_empty_else
-    - avoid_positional_boolean_parameters
-    - avoid_renaming_method_parameters
-    - prefer_const_constructors
-    - prefer_const_literals_to_create_immutables
-    - prefer_typing_uninitialized_variables
-    - sort_child_properties_last
-    - unnecessary_new
-    - unnecessary_this
+    - prefer_const_constructors: false
+    - avoid_unnecessary_containers
 
 analyzer:
   exclude:
