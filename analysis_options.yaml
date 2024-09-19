@@ -4,8 +4,4 @@ include: package:flutter_lints/flutter.yaml
 linter:
   rules:
     - prefer_const_constructors: false
-    - avoid_unnecessary_containers
-
-analyzer:
-  exclude:
-    - test/wid_test.dart
+    - avoid_unnecessary_containers: false
