@@ -1,21 +1,25 @@
-name: Flutter Test
+name: Flutter
 on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Check out the code
-        uses: actions/checkout@v3
-      - name: Set up Flutter
+      - uses: actions/checkout@v3
+        
+      - name: Install Flutter
         uses: subosito/flutter-action@v2
         with:
           flutter-version: '3.24.1'
+          
       - run: flutter pub get
-      - run: flutter test test/lab8_test.dart
+      
+      - run: flutter test test/wid_test.dart
+      
       - run: flutter analyze lib/templates/lab8/
+      
       - run: flutter build web --target=lib/templates/lab8/main.dart
-      - name: Action pages
-        uses: peaceiris/actions-gh-pages@v3
+      
+      - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build/web
